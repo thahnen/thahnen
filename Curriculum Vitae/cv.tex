@@ -1,0 +1,209 @@
+% ================================================================================
+%
+%		Lebenslauf/ CV (XeLaTeX)
+%
+%		=> Zum kompilieren: $ xelatex cv.tex && biber cv.bcf && xelatex cv.tex && open cv.pdf
+%		=> geht nicht in TeXShop wegen BibLaTeX und Biber!
+%
+% ================================================================================
+
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[ngerman]{babel}				% nötig für deutsche Silbentrennung
+\usepackage{marvosym}					%
+\usepackage{fontspec} 					% nötig zum laden der Fonts
+\usepackage{xunicode,xltxtra,url,parskip}		% nötig zur Formattierung
+\RequirePackage{color,graphicx}			% nötig für Farben und Graphiken		!!!
+\usepackage[usenames,dvipsnames]{xcolor}	%								!!!
+\usepackage[big]{layaureo} 				% nötig für bessere DIN A4 Seitenformattierung
+\usepackage{supertabular} 				%								!!!
+\usepackage{titlesec}					% nötig für spezielle Abschnitte
+\usepackage{hyperref}					% nötig für Hyperlinks (ua. innerhalb der PDF)
+\usepackage[absolute]{textpos}
+\usepackage[							% nötig für Einbindung von BibTeX-Dateien
+	backend=biber,
+	babel=hyphen,
+	style=authortitle,
+	minnames=5,
+	maxnames=10
+]{biblatex}
+
+
+% Konfiguration BibTeX
+\addbibresource{papers.bib}
+
+% Konfiguration Hyperlinks
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+% Konfiguration Schriften
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+	SmallCapsFont = Fontin-SmallCaps.otf,
+	BoldFont = Fontin-Bold.otf,
+	ItalicFont = Fontin-Italic.otf
+]{Fontin.otf}
+\font\fb=''[cmr10]''
+
+% Konfiguration Abschnitte
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+% Konfiguration DIN A4 Seite
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+
+\begin{document}
+
+
+% ================================================================================
+%
+%		Titel (Vor- & Zuname)
+%
+% ================================================================================
+\par{
+	\centering{
+		\Huge Tobias \textsc{Hahnen}
+	}\bigskip\par
+}
+
+
+% ================================================================================
+%
+%		Wichtigste Informationen:
+%		===================
+%
+%		- Persöhnliche Informationen
+%		- Berufserfahrung
+%		- Ausbildung
+%
+% ================================================================================
+\section{Pers\"ohnliche Informationen}
+
+\begin{tabular}{rl}
+    \textsc{Geburtsdatum und -ort:}	& 11.07.1998 | Moers \\
+    \textsc{Staatsangeh\"origkeit:}	& Deutsch \\
+    \textsc{Familienstand:}			& Ledig \\
+    \textsc{Adresse:}				& Greta-Rothe-Strasse 32, 47443 Moers \\
+    %\textsc{Telefonnummer:}		& +49 2841 502053 \\
+    \textsc{Mobilfunknummer:}		& +49 175 4415445 \\
+    \textsc{e-Mail:}				& \href{mailto:tobias.hahnen@protonmail.ch}{tobias.hahnen@protonmail.ch}
+\end{tabular} \\
+
+
+\section{Berufserfahrung}
+
+\begin{tabular}{r|p{11cm}}
+	% Praktikum: ThyssenKrupp Steel Europe AG
+	\textsc{M\"arz} 2020 & Praktikant: Informatik, \textsc{thyssenkrupp Steel Europe AG} \\
+	- \textsc{Juni} 2020 & \emph{Anlagen- und Prozesstechnik} \\
+	& \footnotesize{Analyse, Modellierung und Softwareentwicklung zur automatischen Restmengenoptimierung einer SMS group Stranggie\ss anlage. Bestehend aus Schnittl\"angenoptimierung und Restendenminimierung.} \\
+	\multicolumn{2}{c}{} \\
+
+	% SHK: HS Niederrhein
+ 	\textsc{Februar} 2019	& Studentische Hilfskraft: Softwareentwickler, \textsc{Hochschule Niederrhein} \\
+	- \textsc{Februar} 2020	& \emph{iPattern Institut f\"ur Mustererkennung} \\
+	& \footnotesize{Labeling von Echtzeitdaten sowie Softwareentwicklung zum \href{https://github.com/thahnen/labelbox-export-minifier}{automatischen Testen} und \href{https://github.com/thahnen/labelbox-scripts-etc}{Auswerten} dieser. Softwareentwicklung f\"ur ein \href{https://www.hs-niederrhein.de/ipattern/nachrichten-detailseite/?tx_news_pi1\%5Bnews\%5D=9545\&cHash=3202e26ca1ce23d3b3231df1f5c5a573}{Projekt} im Rahmen der medizinischen Bild- / Mustererkennung. Recherche sowie \href{https://github.com/thahnen/elastix-scripts-etc}{Softwareentwicklung} f\"ur ein Projekt im Rahmen der Medizintechnik.} \\
+	\multicolumn{2}{c}{} \\
+	
+	% SHK: Uni Duisburg-Essen
+	 \textsc{August} 2017	& Studentische Hilfskraft: Techniker, \textsc{Universit\"at Duisburg-Essen} \\
+	 - \textsc{M\"arz} 2018	& \emph{Lehrstuhl Allgemeine Psychologie: Kognition} \\
+	 & \footnotesize{Umsetzung / Wartung eines Softwareprojekts zur Durchf\"uhrung eines \href{https://gdt.allgpsy.uni-due.de}{psychologischen Verfahrens}. Administration von Linux / MS Windows Servern. Administration von Mitarbeiter-Rechnern, Verwaltung mit Hilfe von MS Active Directory. Ausarbeitung der IT-Infrastruktur-Dokumentation.} \\
+	 \multicolumn{2}{c}{} \\
+	 
+	 % Bote
+	\textsc{Herbst} 2013		& Fahrradkurier \\
+	- \textsc{Herbst} 2017	& \emph{Rosen-Apotheke Moers-Scherpenberg}
+\end{tabular} \\
+
+
+\section{Ausbildung}
+
+\begin{tabular}{r|p{11cm}}
+%	BEHALTEN FÜR SPÄTER!
+%	 \textsc{July} 2008 & Master of Science in \textsc{Finance}, \textbf{Bocconi University}, Milan\\
+%	& 110/110 \small\emph{summa cum laude} | Major: Quantitative Finance\\
+%	& Thesis: ``Sublinear and Locally Sublinear Prices'' | \small Advisor: Prof. Erio \textsc{Castagnoli}\\
+%	& \normalsize \textsc{Gpa}: 28.61/30\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams} \\
+%	& \\
+	
+	% Hochschule Niederrhein
+	\textsc{M\"arz} 2018		& Informatik, \textbf{Hochschule Niederrhein}, Krefeld \\
+	- \textsc{Heute}			& \emph{Angestrebter Abschluss: B.Sc.} \\
+	\multicolumn{2}{c}{} \\
+	
+	% Universität Duisburg-Essen
+	\textsc{Oktober} 2016	& Angewandte Informatik, \textbf{Universit\"at Duisburg-Essen}, Duisburg \\
+	- \textsc{M\"arz} 2018	& \emph{Schwerpunkt: Ingeneursinformatik} \\
+	\multicolumn{2}{c}{} \\
+	
+	% Grafschafter Gymnasium Moers
+	\textsc{Herbst} 2008		& Abitur, \textbf{Grafschafter Gymnasium}, Moers \\
+	- \textsc{Juli} 2016		& \emph{Abschlussnote: 2.0} \\
+\end{tabular} \\
+
+\newpage
+
+
+% ================================================================================
+%
+%		Weitergehende Informationen und Skills:
+%		==============================
+%
+%		- Publikationen (aus BibTeX-Datei)
+%		- Sprachen
+%		- IT-Fertigkeiten
+%		- Ehrenamtliche Tätigkeiten
+%		- Interessen und Aktivitäten
+%
+% ================================================================================
+\nocite{*}
+\printbibliography[title={Publikationen}]
+
+
+\section{Sprachen}
+
+\begin{tabular}{rl}
+	\textsc{Deutsch:}		& Muttersprache \\
+	\textsc{Englisch:}		& Fliessend (B2) \\
+\end{tabular} \\
+
+
+\section{IT Kompetenzen}
+
+\begin{tabular}{rl}
+	Programmiersprachen:	& \textsc{C/C++}, \textsc{Java}, \textsc{Python}, C\#, SQL, HTML / JavaScript \\
+	Programmbibliotheken:	& OpenCV, OpenMP, JavaFX, WPF \\
+	Technologien:			& GIT, Make / CMake, REST \\
+	Betriebssysteme:		& UNIX-basiert (macOS, \textsc{Linux}, \textsc{QNX}), MS Windows, OpenVMS \\
+	Weitere F\"ahigkeiten:	& {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}, Markdown, Microsoft Office \\
+\end{tabular} \\
+
+
+\section{Ehrenamtliche Aktivit\"aten}
+
+\begin{tabular}{rl}
+	% Fachschaftsrat Informatik
+	\textsc{Winter} 2016		& Fachschaftsrat Informatik \\
+	- \textsc{M\"arz} 2018	& \emph{Universit\"at Duisburg-Essen} \\
+	& \\
+	
+	% Code for Niederrhein Lead
+	\textsc{Winter} 2014		& Leiter des \textbf{Code for Niederrhein} Lab: \\
+	- \textsc{Sommer} 2018	& \emph{Open Knowledge Foundation} \\
+\end{tabular} \\
+
+
+\section{Interessen}
+Prozessoptimierung, Web-Entwicklung, Netzwerktechnik, Open-Source \\
+Historische Computersysteme, Raumfahrttechnik, Projektmanagement, Geschichte, Politik \\
+Fotografie, B\"ucher, Pen \& Paper, Serien \& Filme
+
+
+\end{document}
