@@ -1,7 +1,8 @@
-cv.aux
-cv.bbl
-cv.bcf
-cv.blg
-cv.log
-cv.run.xml
-cv.synctex.gz
+# XeLaTeX / BibTeX files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.synctex.gz
