@@ -23,12 +23,12 @@ I'm working with [Gradle](https://gradle.org) daily while at work and often also
 I'm working with [Ant](https://ant.apache.org) also on a daily basis. Even though it is a bit outdated it outperforms Gradle in some areas!
 
 - [Ant wrapper](https://github.com/thahnen/ant-wrapper) as an equivalent to the Maven / Gradle wrapper (requires no Apache Ant installation)
-- [Gradle2Ant](https://github.com/thahnen/Gradle2Ant) as an interface from Ant to Gradle (Gradle on the other hand can load Ant build scriots)
+- [Gradle2Ant](https://github.com/thahnen/Gradle2Ant) as an interface from Ant to Gradle (Gradle on the other hand can load Ant build scripts)
 - [VB6Ant](https://github.com/thahnen/VB6Ant) to build Visual Basic 6 (Classic) projects in automation environments (e.g. locally or build environment)
 
 ### Jenkins
 
-I'm working wiht [Jenkins](https://www.jenkins.io) nearly every time when trying to automate build but also various other processes. Otherwise I will use GitHub Actions to perform these tasks.
+I'm working wiht [Jenkins](https://www.jenkins.io) nearly every time when trying to automate product builds but also various other processes. Otherwise I will use GitHub Actions to perform these tasks.
 
 - [GemischteTuete](https://github.com/VISUS-Health-IT-GmbH/GemischteTuete) is a Jenkins shared library containing various helper methods and interfaces to some services
 
